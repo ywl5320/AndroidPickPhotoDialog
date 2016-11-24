@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:clickable="true">
+        <Button
+            android:id="@+id/btn_takephoto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/blue_item_r"
+            android:text="拍照"/>
+        <Button
+            android:id="@+id/btn_photo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/blue_item_r"
+            android:text="相册"/>
+    </LinearLayout>
+</RelativeLayout>

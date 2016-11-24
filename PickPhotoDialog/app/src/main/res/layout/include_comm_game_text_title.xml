@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ly_system_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#282d31">
+
+        <LinearLayout
+            android:id="@+id/ly_system_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="100px"
+                android:layout_height="100px"
+                android:padding="18px"
+                android:layout_centerVertical="true"
+                android:visibility="invisible"/>
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:textColor="#ffffff"
+                android:layout_centerInParent="true"
+                android:textSize="54px"
+                android:singleLine="true"
+                android:text="图片选择"
+                />
+
+            <TextView
+                android:id="@+id/tv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="12dp"
+                android:text="(5/10)"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:background="@drawable/blue_item_r"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
