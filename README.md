@@ -1,5 +1,6 @@
 # AndroidPickPhotoDialog
 ###Android图片选择对话框，通过本地相册或照相机获得图片，可单选或多选，单选可设置是否裁剪<br/>
+####博客地址：http://blog.csdn.net/ywl5320/article/details/53320945
 ####模拟器动态图
 ![image](https://github.com/wanliyang1990/AndroidPickPhotoDialog/blob/master/imgs/pickphotodialog.gif)<br/>
 ####1张图片
