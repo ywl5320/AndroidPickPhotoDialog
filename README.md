@@ -1,18 +1,18 @@
 # AndroidPickPhotoDialog
-###Android图片选择对话框，通过本地相册或照相机获得图片，可单选或多选，单选可设置是否裁剪<br/>
-####博客地址：http://blog.csdn.net/ywl5320/article/details/53320945
-####模拟器动态图
+### Android图片选择对话框，通过本地相册或照相机获得图片，可单选或多选，单选可设置是否裁剪<br/>
+#### 博客地址：http://blog.csdn.net/ywl5320/article/details/53320945
+#### 模拟器动态图
 ![image](https://github.com/wanliyang1990/AndroidPickPhotoDialog/blob/master/imgs/pickphotodialog.gif)<br/>
-####1张图片
+#### 1张图片
 ![image](https://github.com/wanliyang1990/AndroidPickPhotoDialog/blob/master/imgs/1.png)<br/>
-####2张图片
+#### 2张图片
 ![image](https://github.com/wanliyang1990/AndroidPickPhotoDialog/blob/master/imgs/2.png)<br/>
-####3张图片
+#### 3张图片
 ![image](https://github.com/wanliyang1990/AndroidPickPhotoDialog/blob/master/imgs/3.png)<br/>
-####4张图片
+#### 4张图片
 ![image](https://github.com/wanliyang1990/AndroidPickPhotoDialog/blob/master/imgs/4.png)<br/>
 
-调用方法：<br/>
+### 调用方法：<br/>
 
         private PickPhotoDialog pickPhotoDialog;
         
@@ -77,4 +77,4 @@
         
 
     
-create by ywl5320
+# create by ywl5320

@@ -131,8 +131,8 @@ public class PickPhotoDialog extends BaseDialog{
                 {
                     PhotoListDialog photoListDialog = new PhotoListDialog(context, activity);
                     photoListDialog.setMAX_COUNT(maxcount);
-                    photoListDialog.show();
                     photoListDialog.setAlreadySelectedImgs(selectedImgs);
+                    photoListDialog.show();
                     photoListDialog.setOnChoicePhotoListener(new PhotoListDialog.OnChoicePhotoListener() {
                         @Override
                         public void onResult(List<ImgBean> imgBeens) {
