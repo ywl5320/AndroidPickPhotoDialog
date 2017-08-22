@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     private PickPhotoDialog pickPhotoDialog;
 
+    private List<ImgBean> imgBeens = new ArrayList<ImgBean>();
+
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,11 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 Window window = pickPhotoDialog.getWindow();
                 window.setGravity(Gravity.BOTTOM);
                 window.setWindowAnimations(R.style.DialogEnter);
-                pickPhotoDialog.setCutImg(true, 5);
+                pickPhotoDialog.setCutImg(false, 5);//false:不裁剪（数量5生效） true:裁剪，数量不生效
+                pickPhotoDialog.setSelectedImgs(imgBeens);//已选择的图片，选择时标出
                 pickPhotoDialog.setOnPhotoResultListener(new PickPhotoDialog.OnPhotoResultListener() {
                     @Override
                     public void onCameraResult(String path) {//相机拍照图片路径
-                        List<ImgBean> imgBeens = new ArrayList<ImgBean>();
+                        imgBeens.clear();
                         ImgBean imgBean = new ImgBean();
                         imgBean.setPath(path);
                         imgBeens.add(imgBean);
@@ -73,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onPhotoResult(List<ImgBean> selectedImgs) {//相册多图选择返回图片路径结果集
                         if(selectedImgs != null && selectedImgs.size() > 0) {
-                            adViewpagerUtil = new AdViewpagerUtil(MainActivity.this, viewpager, lydots, 8, 4, selectedImgs);
+                            imgBeens.clear();
+                            imgBeens.addAll(selectedImgs);
+                            adViewpagerUtil = new AdViewpagerUtil(MainActivity.this, viewpager, lydots, 8, 4, imgBeens);
                             adViewpagerUtil.initVps();
                         }
                         else

@@ -67,6 +67,7 @@ public class PhotoListDialog extends BaseDialog{
     private List<ImgBean> imgs;
     private List<ImgBean> tempImgs;
     private List<ImgBean> selectedImgBeans;
+    private List<ImgBean> alreadySelectedImgs;
 
     private ImgGridViewAdapter imgGridViewAdapter;
     private ImgListViewAdapter imgListViewAdapter;
@@ -82,6 +83,10 @@ public class PhotoListDialog extends BaseDialog{
     public PhotoListDialog(Context context, Activity activity) {
         super(context);
         this.activity = activity;
+    }
+
+    public void setAlreadySelectedImgs(List<ImgBean> alreadySelectedImgs) {
+        this.alreadySelectedImgs = alreadySelectedImgs;
     }
 
     public void setOnChoicePhotoListener(OnChoicePhotoListener onChoicePhotoListener) {
@@ -184,14 +189,7 @@ public class PhotoListDialog extends BaseDialog{
         imgListViewAdapter = new ImgListViewAdapter(context, imgFloderBeens);
         gridView.setAdapter(imgGridViewAdapter);
         listView.setAdapter(imgListViewAdapter);
-
-//        if(MyApplication.getInstance().getSelectedImgBeans() != null) {
-//            tvRight.setText("(" + MyApplication.getInstance().getSelectedImgBeans().size() + "/" + MAX_COUNT + ")");
-//        }
-//        else
-//        {
         mtvMenu.setText("(" + selectedImgBeans.size() + "/" + MAX_COUNT + ")");
-//        }
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -330,6 +328,26 @@ public class PhotoListDialog extends BaseDialog{
 
     }
 
+    private void sortSelectedImgs(List<ImgBean> imgs)
+    {
+        if(alreadySelectedImgs != null)
+        {
+            selectedImgBeans.clear();
+            for(ImgBean img : alreadySelectedImgs)
+            {
+                for(ImgBean imgBean : imgs)
+                {
+                    if(img.getPath().equals(imgBean.getPath()))
+                    {
+                        imgBean.setSelected(true);
+                        selectedImgBeans.add(imgBean);
+                    }
+                }
+            }
+            mtvMenu.setText("(" + selectedImgBeans.size() + "/" + MAX_COUNT + ")");
+        }
+    }
+
 
     public void scanImgs()
     {
@@ -357,7 +375,7 @@ public class PhotoListDialog extends BaseDialog{
                     {
                         ImgFloderBean imgflder = new ImgFloderBean();
                         imgflder.setFirstImgPath(path);
-                        imgflder.setDirName("所以图片");
+                        imgflder.setDirName("所有图片");
                         imgflder.setType(0);
                         imgflder.setSelected(true);
                         imgFloderBeens.add(imgflder);
@@ -421,6 +439,7 @@ public class PhotoListDialog extends BaseDialog{
             super.handleMessage(msg);
             if(msg.what == 0x001)
             {
+                sortSelectedImgs(imgs);
                 imgGridViewAdapter.setIsaddpath(false);
                 imgGridViewAdapter.notifyDataSetInvalidated();
             }
