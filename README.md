@@ -1,6 +1,7 @@
 # AndroidPickPhotoDialog
 ### Android图片选择对话框，通过本地相册或照相机获得图片，可单选或多选，单选可设置是否裁剪<br/>
 #### 博客地址：http://blog.csdn.net/ywl5320/article/details/53320945
+#### “图片无限轮播”使用到另一个开源项目：https://github.com/wanliyang1990/AdViewPager
 ## update
 兼容7.0图片选择和裁剪；<br/>
 新增当第二次选择图片时，会把第一次选择的图片给选中，避免重复选择。<br/>
